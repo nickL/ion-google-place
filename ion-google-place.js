@@ -55,7 +55,7 @@ angular.module('ion-google-place', [])
                         var searchInputElement = angular.element(el.element.find('input'));
 
                         scope.selectLocation = function(location){
-                            ngModel.$setViewValue(location);
+                            ngModel.$setViewValue(angular.copy(location));
                             ngModel.$render();
                             el.element.css('display', 'none');
                             $ionicBackdrop.release();
